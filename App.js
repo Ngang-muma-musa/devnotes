@@ -1,10 +1,8 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View, ScrollView, Dimensions } from 'react-native';
-import Icon from 'react-native-vector-icons/SimpleLineIcons';
-import Search from 'react-native-vector-icons/EvilIcons';
 import More from 'react-native-vector-icons/MaterialIcons';
-import File from 'react-native-vector-icons/AntDesign';
 import Card from './components/card';
+import Nav from './components/nav';
 
 const { width: wWidth } = Dimensions.get("screen");
 
@@ -44,7 +42,7 @@ const data = [
     id: 6,
     title: "Drinks",
     date: "sep 16, 2022",
-    notes: "Pour acheter un nouveau pass internet, recharger sur My Orange "
+    notes: "Pour acheter un nouveau pass internet recharger sur My Orange "
   },
   {
     id: 7,
@@ -58,35 +56,24 @@ const data = [
     date: "sep 16, 2022",
     notes: "Pour acheteecharger votre compte ou consulter votre solde, connectez-vous sur My Orange "
   }
-
+ 
 ];
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <View style={{ flex: 1, backgroundColor: '#FAA030' }}>
+      <View style={{ flex: 1 }}>
         <View style={{
           flex: 4,
           alignItems: 'center',
           justifyContent: 'center',
         }}>
-          <Text style={{ fontSize: 33, fontWeight: '300' }}>All notes</Text>
-          <Text style={{ fontSize: 15, fontWeight: '300' }}>10 Notes</Text>
+          <Text style={{ fontSize: 39, fontWeight: '300' ,color:'white'}}>All notes</Text>
+          <Text style={{ fontSize: 15, fontWeight: '300' ,color:'white'}}>{data.length} Notes</Text>
         </View>
-        <View style={{ flex: 1, backgroundColor: 'blue', alignItems: 'center', justifyContent: 'center', paddingHorizontal: 15 }}>
-          <View style={{ flexDirection: 'row' }}>
-            <View style={{ flex: 2, justifyContent: 'center' }}>
-              <Icon name="menu" size={20} color="#900" />
-            </View>
-            <View style={{ flexDirection: 'row', flex: 1, justifyContent: 'space-between', alignItems: 'center' }}>
-              <File name="addfile" size={20} color="#900" />
-              <Search name="search" size={30} color="#900" />
-              <More name="more-vert" size={30} color="#900" />
-            </View>
-          </View>
-        </View>
+        <Nav/>
       </View>
-      <View style={{ flex: 1.5, backgroundColor: '#32B76C' }}>
+      <View style={{ flex: 1.5 }}>
         <ScrollView contentContainerStyle={{ paddingHorizontal: 10 }}>
           <View flexDirection="row" style={{ paddingTop: 10, justifyContent: 'space-between' }}>
             <View >
@@ -98,7 +85,7 @@ export default function App() {
           </View>
         </ScrollView>
         <View style={styles.button}>
-          <More name="add" size={30} color="#900" />
+          <More name="add" size={30} color="#900" style={{color:'white'}} />
         </View>
       </View>
     </View>
@@ -108,18 +95,18 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
+    backgroundColor: 'black',
   },
   button: {
     height: 60,
     width: 60,
     borderRadius: 50,
-    backgroundColor: 'red',
+    backgroundColor: 'purple',
     justifyContent: 'center',
     alignItems: 'center',
     position: 'absolute',
     left: '80%',
-    bottom: '7%',
+    bottom: '5%',
     elevation: 1,
   },
   
